@@ -14,7 +14,9 @@ export default function Home() {
                 <Button
                     className="col-[1/4]"
                     onClick={() => {
-                        if (yPlane.indexOf(face) != yPlane.length - 1)
+                        if (xPlane.includes(face) && face != "back")
+                            setFace("top");
+                        else if (yPlane.indexOf(face) != yPlane.length - 1)
                             setFace(yPlane[yPlane.indexOf(face) + 1]);
                         else setFace(yPlane[0]);
                     }}
@@ -24,7 +26,13 @@ export default function Home() {
 
                 <Button
                     onClick={() => {
-                        if (xPlane.indexOf(face) != 0)
+                        if (
+                            yPlane.includes(face) &&
+                            face != "front" &&
+                            face != "back"
+                        )
+                            setFace("left");
+                        else if (xPlane.indexOf(face) != 0)
                             setFace(xPlane[xPlane.indexOf(face) - 1]);
                         else setFace(xPlane[xPlane.length - 1]);
                     }}
@@ -45,7 +53,13 @@ export default function Home() {
 
                 <Button
                     onClick={() => {
-                        if (xPlane.indexOf(face) != xPlane.length - 1)
+                        if (
+                            yPlane.includes(face) &&
+                            face != "front" &&
+                            face != "back"
+                        )
+                            setFace("right");
+                        else if (xPlane.indexOf(face) != xPlane.length - 1)
                             setFace(xPlane[xPlane.indexOf(face) + 1]);
                         else setFace(xPlane[0]);
                     }}
@@ -55,7 +69,9 @@ export default function Home() {
                 <Button
                     className="col-[1/4]"
                     onClick={() => {
-                        if (yPlane.indexOf(face) != 0)
+                        if (xPlane.includes(face) && face != "back")
+                            setFace("bottom");
+                        else if (yPlane.indexOf(face) != 0)
                             setFace(yPlane[yPlane.indexOf(face) - 1]);
                         else setFace(yPlane[yPlane.length - 1]);
                     }}
