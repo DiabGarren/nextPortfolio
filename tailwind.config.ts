@@ -16,6 +16,8 @@ const config: Config = {
                 blue: "#0000ff",
                 white: "#fff",
                 black: "#000",
+                orange: "#ed9012",
+                grey: "#222222",
             },
             gridTemplateColumns: {
                 box: "repeat(8, minmax(30px, 190px))",

@@ -5,7 +5,7 @@
 
 :root {
     --orange: #ed9012;
-    --light-blue: #84bffa;
+    --grey: #222222;
 
     --box-radius: 3wv;
     --box-shadow: 0 0 5px 5px #fff, 0 0 30px 1vw #0685a9, 0 0 40px 2vw #03158d,
@@ -16,9 +16,28 @@
     font-family: "Fira Code", monospace;
 }
 
+::selection {
+    color: var(--orange);
+    background-color: var(--grey);
+}
+
 body {
     color: white;
     background-color: #151515;
+}
+
+header,
+footer {
+    background-color: var(--grey);
+}
+
+#heading::after {
+    content: "_";
+    animation: typing-blink 1.5s linear 0s infinite;
+}
+
+nav li a {
+    transition: border-color 0.3s;
 }
 
 svg {
@@ -116,5 +135,23 @@ path {
     }
     to {
         transform: translate(25px, 25px);
+    }
+}
+
+@keyframes typing-blink {
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 1;
     }
 }

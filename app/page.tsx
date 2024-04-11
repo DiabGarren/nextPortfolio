@@ -1,5 +1,7 @@
 /* eslint-disable react/jsx-key */
 "use client";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
@@ -118,20 +120,20 @@ export default function Home() {
             thumbnail: "/thumbnails/3d-printing.png",
         },
         {
-            link: "",
-            thumbnail: "",
+            link: "https://diabgarren.github.io/techtroll/",
+            thumbnail: "/thumbnails/tech-troll.png",
         },
         {
-            link: "",
-            thumbnail: "",
+            link: "https://diabgarren.github.io/motors/",
+            thumbnail: "/thumbnails/php-motors.png",
         },
         {
-            link: "",
-            thumbnail: "",
+            link: "https://diabgarren.github.io/wdd230/bountiful-foods/",
+            thumbnail: "/thumbnails/bounty.png",
         },
         {
-            link: "",
-            thumbnail: "",
+            link: "https://diabgarren.github.io/wdd230/chamber/",
+            thumbnail: "/thumbnails/chamber.png",
         },
         {
             link: "",
@@ -157,9 +159,7 @@ export default function Home() {
 
     return (
         <main>
-            <header>
-                <h1>Welcome</h1>
-            </header>
+            <Header active={"Home"} />
             <div
                 className="container grid grid-cols-box gap-[30px_10px] py-[50px] mx-auto max-w-[85%]"
                 onClick={(event) => {
@@ -293,7 +293,14 @@ export default function Home() {
                         </div>
                     );
                 })}
+                <div
+                    className="col-[1/9] text-center text-[13px] sm:text-[18px] md:text-[35px] lr:text-[50px]"
+                    id="click"
+                >
+                    *pRojects open in new tAb
+                </div>
             </div>
+            <Footer />
         </main>
     );
 }
